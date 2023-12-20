@@ -1,0 +1,11 @@
+{
+    "liveServer.settings.port": 5501,
+    "terminal.integrated.ignoreProcessNames": [
+        "starship",
+        "oh-my-posh",
+        "bash",
+        "zsh",
+        "node.js"
+    ],
+    "terminal.integrated.allowChords": false
+}

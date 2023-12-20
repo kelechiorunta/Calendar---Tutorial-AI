@@ -1,0 +1,407 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+  /* border:1px solid; */
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  /* pointer-events: none; */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.riders_list{
+  overflow:scroll;
+  width:12%;
+
+}
+
+.calendar_list{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(auto, 50px));
+  grid-auto-rows: 50px;
+  width: max-content;
+  margin: auto calc(50% - 175px);
+  /* background: rgba(204, 69, 69, 0.3); */
+  
+}
+
+.listcont{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(auto, 50px));
+  grid-auto-rows: 50px;
+  /* grid-column: span 7;
+  width:350px; */
+  width: max-content;
+  height:300px;
+   margin: auto calc(50% - 135px) 120px calc(50% - 135px);
+   overflow:scroll;
+   border: 1px solid;
+}
+
+.next_container{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(auto, 50px));
+  grid-auto-rows: 50px;
+  /* grid-column: span 7;
+  width:350px; */
+  width: max-content;
+  height:300px;
+   margin: -120px calc(50% - 135px) 120px calc(50% - 135px);
+   overflow:scroll;
+   border: 1px solid;
+}
+
+.cal_container{
+  width:max-content;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto  calc(50%);
+  height:100%;
+}
+
+.cell, .weekday_label{
+  border:1px solid;
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+.weekday_label{
+  font-size:15px;
+}
+
+.sel{background:rgba(0,0,0,0.4);}
+
+.cell:hover{
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.2);
+  /* font-size: 50px; */
+  transition: all 1s ease;
+}
+
+.nav_container{
+ width:100px;
+  display: inline-block;
+  border: 1px solid;
+  margin:0 calc(50% - 12.5px);
+}
+
+.calendar_nav{
+  width:50px;
+  height: 30px;
+  /* margin:0 calc(50% + 15px); */
+  display: inline-block;
+}
+
+li:not(.cell){
+  border:1px solid;
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.oddcell{
+  font-size: 11px;
+}
+
+.square, .clearall, .backspace{
+  box-shadow: -1px -1px 2px 5px inset grey ;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor:pointer;
+}
+
+.clearall, .backspace{
+  grid-column: span 2;
+}
+
+.calculator_grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 50px));
+  grid-auto-rows: 50px;
+  width: max-content;
+  padding: 1rem;
+  margin: auto calc(50% - 100px);
+  border: 1px solid;
+  border-left: 15px solid rgba(0,0,0,0.6);
+  border-right: 15px solid rgba(0,0,0,0.6);
+  border-top: 15px solid rgba(0,0,143, 0.3);
+  border-bottom: 15px solid rgba(0,0,143, 0.3);
+  border-radius: 20px;
+  background: linear-gradient(90deg, hsla(290, 80%, 50%, 0.3), hsla(290, 80%, 50%, 0.4))
+}
+
+input{
+  grid-column: span 4;
+  text-align: right;
+  font-size: 30px;
+  border-radius: 15px;
+  /* pointer-events: none; */
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container_cell{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(auto, 50px));
+  grid-auto-rows: 50px;
+  width:100%;
+  margin:auto;
+
+}
+.mycell{
+  border-top:2px solid red!important;
+  border-bottom:2px solid red !important;
+  border-left:2px solid !important;
+  border-right:2px solid !important ;
+  filter: blur(1px);
+  background-color: hsla(290, 80%, 50%, 0.3) !important;
+  color: red;
+  font-size: 20px !important;
+  
+}
+
+.Calendars_grid{
+  width:100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  grid-auto-rows: 100px;
+  grid-column-gap: 20px;
+  grid-row-gap: 300px;
+  overflow: scroll;
+
+}
+
+.selected{
+  background: red;
+}
+
+.cont_btn{
+  display: inline-block;
+  width:auto;
+  grid-column: span 7;
+}
+
+
+.datetitle{
+  display: inline;
+}
+
+.calendar_btn{
+  display: inline;
+}
+
+.Calcomponent{
+  width:70%;
+  margin:50px auto 50px auto;
+}
+
+.currentyearInput{
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.spinid{
+  transform: rotate(50deg);
+  background: red;
+}
+
+.keysearch{
+  width:auto;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.search_display{
+  border:1px double;
+  height:max-content;
+  width:250px;
+  text-align: left !important;
+}
+.searchlist{
+  /* display: block; */
+  text-align: left !important;
+  width: auto;
+  height:max-content;
+}
+
+.content{
+  display: block;
+  font-size: 17px;
+  overflow: scroll;
+  width:250px;
+  max-height: 300px;
+  padding: 15px;
+}
+
+caption{
+  /* border: 1px solid; */
+  font-size: 20px;
+  width:250px;
+  word-spacing: 10px;
+  letter-spacing: 5px;
+}
+
+.content>strong{
+  font-weight: bold;
+}
+
+.markedin{
+  color:red;
+}
+.li_search{
+  /* display: block; */
+  width:250px;
+  height: max-content;
+  text-align: center !important;
+  text-decoration: dotted;
+  text-shadow: 1px 1px 1px blue;
+  text-transform: uppercase;
+  font-size: 17px;
+  cursor: pointer;
+
+}
+
+option, select{
+  width:250px;
+  height:max-content;
+  overflow-x:scroll;
+}
+
+.refinput{
+  box-sizing: border-box;
+  width: max-content;
+  max-height: max-content  !important;
+  display: block !important;
+  margin: auto !important;
+  font-size: 20px;
+  scroll-behavior: auto;
+  background: linear-gradient(10deg,  rgba(255,225,255, 0.7), rgba(220,220,255, 0.5));
+  --webkit-text-stroke: 23px solid green;
+  padding:2px;
+  border: 4px double;
+  /* pointer-events: none; */
+}
+.fadeinclass{
+  background: blue;
+  opacity:0.1;
+  transition:all 3s ease;
+}
+
+/* .divdata{
+  width:250px;
+  overflow:scroll;
+  padding:20px;
+  -webkit-text-stroke: 5px red;
+  font-size: 92px;
+  font-weight: 900;
+  text-shadow: 5px 5px 5p;
+  color: black;
+  outline-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* div > span{
+  color:red;
+  background: blue;
+  font-weight:bold;
+  cursor: pointer;
+} */
+
+.divdata{
+  padding:15px;
+  width:250px;
+}
+
+
+.boldens{
+  color:red;
+  font-weight:bold;
+  cursor: pointer;
+}
+
+.lessons{
+  display: inline-block;
+  /* transform: translate(2px, -4px); */
+  font-size:20px;
+  margin:auto 32.75%;
+  width:max-content;
+  /* border: 1px solid; */
+  text-transform: uppercase;
+}
+
+.btns_range{
+  display: grid;
+  grid-template-columns:repeat(5,minmax(max-content, auto));
+}
+
+.myrange{
+  width:max-content;
+  display: inline-block;
+  margin:auto 25%;
+}
+
+.range_cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100% !important;
+  padding:2px;
+  margin:auto;
+}
+
+.focus{
+  border: 1px solid !important;
+  border-radius: 3px;
+  width: min-content;
+  padding: 1px 5px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  margin: auto !important;
+}
